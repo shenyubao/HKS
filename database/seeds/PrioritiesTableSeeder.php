@@ -12,6 +12,7 @@ class PrioritiesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Priority::truncate();
         Priority::insert([
             'priority' => 'Immediate',
@@ -33,6 +34,6 @@ class PrioritiesTableSeeder extends Seeder
             'priority' => 'Postponed',
             'color' => 'dark',
         ]);
-
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

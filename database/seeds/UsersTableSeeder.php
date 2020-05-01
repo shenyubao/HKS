@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         User::truncate(); //清空資料庫
         User::create([
             'name' => 'Ken',
@@ -46,6 +47,7 @@ class UsersTableSeeder extends Seeder
         User::unguard();
         // factory(User::class, 120)->create();
         User::reguard();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }
 }

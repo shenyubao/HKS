@@ -13,6 +13,7 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Permission::truncate();
         Permission::create([
             'user_id'=>1,
@@ -28,5 +29,6 @@ class PermissionsTableSeeder extends Seeder
         //         'role_id'=>4
         //     ]);
         // });
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

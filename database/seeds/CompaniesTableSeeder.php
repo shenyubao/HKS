@@ -13,11 +13,13 @@ class CompaniesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Company::truncate();
         Company::create([
             'name' => 'CMoney',
             'description' => 'creates more money !',
             'user_id' => 1,
         ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
